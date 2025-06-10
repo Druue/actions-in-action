@@ -1,6 +1,6 @@
 name: My First Workflow
 
-on:
+on: # Webhook triggers
   push:
     branches:
       - main
