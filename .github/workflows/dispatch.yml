@@ -1,6 +1,9 @@
 name: My Dispatched Workflow
 
 on:
+  repository_dispatch:
+    types: [event1, event2]
+
   workflow_dispatch:
     inputs:
       logLevel:
