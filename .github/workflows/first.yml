@@ -5,8 +5,6 @@ on: # Webhook triggers
     branches:
       - main
 
-  workflow_dispatch:
-
 jobs:
   MyFirstJob:
     runs-on: ubuntu-latest

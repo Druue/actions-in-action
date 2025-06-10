@@ -1,0 +1,27 @@
+name: My Dispatched Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log Level"
+        default: "warning"
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+      tag:
+        description: "Apply tag after successful run"
+        required: true
+        type: boolean
+
+jobs:
+  MyDispatchedJob:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          echo "Hello! I was manually called with the following info:"
+          echo ${{ inputs.logLevel }}
+          echo ${{ inputs.tag }}
