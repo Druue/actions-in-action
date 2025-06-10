@@ -1,4 +1,4 @@
-name: My Dispatched Workflow
+name: dispatch
 
 on:
   repository_dispatch:
