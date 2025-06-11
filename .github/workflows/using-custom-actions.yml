@@ -10,6 +10,8 @@ jobs:
       - name: Checkout repo to use local action
         uses: actions/checkout@v4
 
+      - run: ls
+
       - name: Run custom action
         id: my-first-action
         uses: ./
