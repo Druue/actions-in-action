@@ -6,11 +6,11 @@ on:
     #    |    *    |    *    |       *       |        *        |      *
     #    | minutes |  Hours  | Days of Month |      Month      | Days of Week
     #    |  0-59   |  0-23   |     1-31      |  1-12 / JAN-DEC | 0-6 / SUN-SAT
-    - cron: "*/5 * * * *"
+    # - cron: "*/5 * * * *"
     #       hours
     # - cron: "30 */3 * * *"
     #       days
-    # - cron: "30 9 */2 * *"
+    - cron: "30 9 */2 * *"
     #       working hours
     # - cron: "0 9-18 * * 1-5"
     #       not wednesdays or fridays
