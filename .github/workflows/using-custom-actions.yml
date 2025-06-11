@@ -7,14 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo to use local action
+      - name: checkout
         uses: actions/checkout@v4
 
-      - run: ls
-
       - name: Run custom action
+        uses: ./.github/actions/my-first-action
         id: my-first-action
-        uses: ./
         with:
           who-to-greet: "@druue"
 
