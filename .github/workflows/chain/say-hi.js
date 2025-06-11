@@ -1,3 +1,3 @@
-export default function sayHi({ github, _context }) {
-  console.log(github);
+export default function sayHi({ github, context }) {
+  console.log(context.job);
 }
