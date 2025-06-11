@@ -1,3 +1,4 @@
 node_modules
+!.github/actions/action-js/node_modules
 src/testing
 .env
