@@ -15,5 +15,5 @@ jobs:
           script: |
             const { default: sayHi } = await import('${{ github.workspace }}/.github/workflows/chain/say-hi.js')
 
-            setMatrix({github, context})
+            sayHi({github, context})
       - run: echo "Hello!"
