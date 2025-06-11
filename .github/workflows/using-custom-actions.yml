@@ -3,24 +3,40 @@ name: Custom Action Workflow
 on: [push]
 
 jobs:
-  custom:
+  docker-shell:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
+      - name: Checkout repo to use local action
         uses: actions/checkout@v4
 
       - name: Run custom action
-        uses: ./.github/actions/my-first-action
-        id: my-first-action
+        uses: ./.github/actions/action-docker-sh
+        id: hello
         with:
           who-to-greet: "@druue"
 
       - name: Output the answer
-        run: echo "The answer is ${{ steps.my-first-action.outputs.answer }}"
+        run: echo "The answer is ${{ steps.hello.outputs.answer }}"
 
       - name: Test the container
-        if: ${{ steps.my-first-action.outputs.answer != 42 }}
+        if: ${{ steps.hello.outputs.answer != 42 }}
         run: |
           echo "::error file=entrypoint.sh,line=4,title=Error in container::The answer was not expected"
           exit 1
+
+  js-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo to use local action
+        uses: actions/checkout@v4
+
+      - name: Run custom action
+        uses: ./.github/actions/action-js
+        id: hello
+        with:
+          who-to-greet: "@druue"
+
+      - name: Output the answer
+        run: echo "The answer is ${{ steps.hello.outputs.answer }}"

@@ -1,0 +1,17 @@
+name: Custom action w/ Docker & Shell Scripting
+description: Greets someone; returns 42
+
+inputs:
+  who-to-greet:
+    description: Who to greet
+    default: World
+
+outputs:
+  answer:
+    description: 42
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.who-to-greet }}
