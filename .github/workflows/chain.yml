@@ -18,4 +18,16 @@ jobs:
             const { default: sayHi } = await import('${{ github.workspace }}/.github/workflows/chain/say-hi.js')
 
             sayHi({github, context})
-      - run: echo "Hello!"
+
+  job_2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { default: sayHi } = await import('${{ github.workspace }}/.github/workflows/chain/say-hi.js')
+
+            sayHi({github, context})
