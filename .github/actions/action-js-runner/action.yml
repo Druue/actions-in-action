@@ -1,0 +1,15 @@
+name: Custom action w/ JS scripting & Caching
+description: Greets someone; returns 42
+
+inputs:
+  who-to-greet:
+    description: Who to greet
+    default: World
+
+outputs:
+  answer:
+    description: 42
+
+runs:
+  using: node20
+  main: index.js

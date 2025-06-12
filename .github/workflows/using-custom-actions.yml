@@ -40,3 +40,25 @@ jobs:
 
       - name: Output the answer
         run: echo "The answer is ${{ steps.hello.outputs.answer }}"
+
+  js-script-runner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Node Setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Run custom action
+        uses: ./.github/actions/action-js-runner
+        id: hello
+        with:
+          who-to-greet: "@druue"
+
+      - name: Output the answer
+        run: echo "The answer is ${{ steps.hello.outputs.answer }}"
